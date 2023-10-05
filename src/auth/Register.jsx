@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import {createUserWithEmailAndPassword} from "firebase/auth";
+import {auth} from "../firebase";
+import { Link } from 'react-router-dom';
+
 
 export const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -50,9 +54,10 @@ export const Register = (props) => {
                     <input value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} type={showConfirmPassword ? "text" : "password"} placeholder="********" id="confirmPassword" name="confirmPassword" />
                     <button type="button" onClick={toggleConfirmPasswordVisibility}>{showConfirmPassword ? "Hide" : "Show"}</button>
                 </div>
-                <button type="submit">Register</button>
+                <button className="btn5" type="submit">Register</button>
             </form>
-            <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
+            <Link to="/login" className="link-btn">Already have an account? Login here.</Link>
+
         </div>
     )
 }

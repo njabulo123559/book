@@ -1,0 +1,106 @@
+/* ContactPage.css */
+
+/* Styles for the Contact Page */
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .text0{
+    color: #000000;
+    font-size: 40px;
+  }
+  
+  .left_section, p{
+    color: #3f3f3f;
+    font-size: 15px;
+    margin-left: auto;
+  
+  }
+  
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+
+  }
+  
+  .left-section h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display:inline-flexbox;
+  }
+  
+  .right-section {
+    flex: 1;
+    padding-left: 200px;
+  }
+  
+  .right-section form {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group input{
+    width:50%;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .form-group label {
+    display: block;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  /* Style the textarea */
+.form-group textarea {
+    width: 50%; /* Make the textarea span the full width of its container */
+    padding: 10px; /* Add padding to the textarea for spacing */
+    border: 1px solid #ccc; /* Add a border for visual separation */
+    border-radius: 4px; /* Add rounded corners to the textarea */
+}
+  
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  textarea {
+    resize: vertical;
+    height: 150px; /* Adjust the height as needed */
+  }
+
+
+  
+  button {
+    background-color: #2270E2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 25%;
+  }
+  
+  /* Styles for the Map Section */
+  .map-section {
+    height: 400px;
+    /* Add more styles for the map container as needed */
+  }
+  
+  
