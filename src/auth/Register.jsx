@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import {createUserWithEmailAndPassword} from "firebase/auth";
 import {auth} from "../firebase";
 import { Link } from 'react-router-dom';
 
@@ -13,7 +12,7 @@ export const Register = (props) => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Perform password validation checks
@@ -23,9 +22,27 @@ export const Register = (props) => {
             setError("Password must be at least 8 characters long");
         } else {
             // Password is valid, proceed with form submission
-            console.log(email);
+            try {
+                await auth.createUserWithEmailAndPassword(email, password);
+            } catch (error) {
+                setError(error.message);
+            }
         }
     }
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+
+    //     // Perform password validation checks
+    //     if (password !== confirmPassword) {
+    //         setError("Passwords do not match");
+    //     } else if (password.length < 8) {
+    //         setError("Password must be at least 8 characters long");
+    //     } else {
+    //         // Password is valid, proceed with form submission
+    //         console.log(email);
+    //     }
+    // }
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -61,3 +78,5 @@ export const Register = (props) => {
         </div>
     )
 }
+
+
