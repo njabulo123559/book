@@ -1,21 +1,28 @@
 import React, { useState } from "react";
 import {auth} from "../firebase";
 import {signInWithEmailAndPassword} from "firebase/auth"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export const Login = (props) => {
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) =>{
         console.log(userCredential)
+        // refreshPage
+        window.location.reload(false);
+        navigate('/');
     })
     .catch((error) => {
         console.log(error);
+        setError(error.message);
 
     });
 };
@@ -24,6 +31,7 @@ export const Login = (props) => {
         <div className="auth-form-container">
             <h2>Login</h2>
             <form className="login-form" onSubmit={handleSubmit}>
+                {error && <div className="error-message">{error}</div>}
                 <label htmlFor="email">email</label>
                 <input value={email} onChange={(e) => setEmail(e.target.value)}type="email" placeholder="youremail@gmail.com" id="email" name="email" />
                 <label htmlFor="password">password</label>

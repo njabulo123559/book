@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {auth} from "../firebase";
 import { Link } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 
 export const Register = (props) => {
@@ -23,26 +24,19 @@ export const Register = (props) => {
         } else {
             // Password is valid, proceed with form submission
             try {
-                await auth.createUserWithEmailAndPassword(email, password);
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                // User registration successful, you can access userCredential.user for user details
+                console.log("User registered successfully:", userCredential.user);
+
+                // Update the displayName of the user
+                // await updateProfile(auth.currentUser, { displayName: name });
             } catch (error) {
                 setError(error.message);
             }
         }
     }
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-
-    //     // Perform password validation checks
-    //     if (password !== confirmPassword) {
-    //         setError("Passwords do not match");
-    //     } else if (password.length < 8) {
-    //         setError("Password must be at least 8 characters long");
-    //     } else {
-    //         // Password is valid, proceed with form submission
-    //         console.log(email);
-    //     }
-    // }
+    console.log("registered user", auth.currentUser);
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
