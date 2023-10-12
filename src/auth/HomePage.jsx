@@ -9,7 +9,7 @@ function HomePage() {
       <div className="first-section">
         <div className="text-and-image">
           <div className="welcome-text">
-            <h1 className="text1">Welcome to Ebook Maker</h1>
+            <h1 className="text1">Welcome to Unizulu Ebook Maker</h1>
             <p className="text2">Create stunning Ebooks with just a few clicks! Our user-friendly web application allows you to bring your ideas to life with ease. Choose from a wide range of templates, customize to your liking, and save your Ebook in any format. Get creative and start publishing your masterpiece today!</p>
           </div>
           <div className="ebook-image">

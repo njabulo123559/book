@@ -7,6 +7,7 @@ import { Register } from "./auth/Register";
 import { HomePage } from "./auth/HomePage";
 import {NavigationBar} from "./auth/NavigationBar";
 import { ContactPage } from "./auth/ContactPage";
+import {About} from "./auth/About"
 import { BrowserRouter as Router, Route, Switch , Routes} from 'react-router-dom';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/contact" element={<ContactPage/>} />
+        <Route path="/about" element={<About/>}/>
         
       </Routes>
     </div>
