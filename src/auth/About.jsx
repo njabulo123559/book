@@ -1,125 +1,58 @@
 
 import '../Style.css'
+import {NavigationBar} from "../auth/NavigationBar";
+import React, { useState } from "react";
+import Image1 from "../assets/Ebook writing-min.jpg"
+import {Footer} from "../auth/footer.jsx"
 
 
-import React, { Component } from 'react';
-import jsPDF from 'jspdf';
-import mammoth from 'mammoth';
-import { Document, Packer, Paragraph, TextRun } from "docx";
+const About = () => {
+  const [showMore, setShowMore] = useState(false);
 
+  const handleShowMore = () => {
+    setShowMore(!showMore);
+  };
 
-
-class About extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: '',
-      author: '',
-      content: '',
-      selectedFormat: 'pdf', // Default format
-    };
-  }
-
-  handleTitleChange = (e) => {
-    this.setState({ title: e.target.value });
-  }
-
-  handleAuthorChange = (e) => {
-    this.setState({ author: e.target.value });
-  }
-
-  handleContentChange = (e) => {
-    this.setState({ content: e.target.value });
-  }
-
-  handleFormatChange = (e) => {
-    this.setState({ selectedFormat: e.target.value });
-  }
-
-  handleSave = () => {
-    // You can implement eBook generation and download logic here based on the selected format.
-    // For this example, we'll simulate a download link.
-    const { title, author, content, selectedFormat } = this.state;
-    const ebookData = `${title}\nAuthor: ${author}\n\n${content}`;
-
-    if (selectedFormat === 'pdf') {
-        // Create a new jsPDF instance and generate a PDF
-        const doc = new jsPDF();
-        doc.text(title, 10, 10);
-        doc.text(`Author: ${author}`, 10, 20);
-        doc.text(content, 10, 30);
-        doc.save(`ebook.pdf`);
-    }
-    else if (selectedFormat === 'docx') {
-        const doc = new Document();
-    
-        // Add content to the Word document
-        doc.addSection({
-          properties: {},
-          children: [
-            new Paragraph({
-              children: [
-                new TextRun(title).bold(),
-                new TextRun(`Author: ${author}`),
-                new TextRun(content),
-              ],
-            }),
-          ],
-        });
-    
-        // Save the Word document as a file
-        Packer.toBlob(doc).then((blob) => {
-          const url = window.URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = `ebook.docx`;
-          document.body.appendChild(a);
-          a.click();
-          window.URL.revokeObjectURL(url);
-        });
-
-    }
-   
-
-
- 
-
-
-
-
-
-  }
-
-  render() {
-    return (
-      <div className='create-ebook-container'>
-        <h2>Create eBook</h2>
-        <form>
-          <div className="form-group">
-            <label>Title:</label>
-            <input type="text" value={this.state.title} onChange={this.handleTitleChange} />
-          </div>
-          <div className="form-group">
-            <label>Author:</label>
-            <input type="text" value={this.state.author} onChange={this.handleAuthorChange} />
-          </div>
-          <div className="form-group">
-            <label>Ebook Content:</label>
-            <textarea value={this.state.content} onChange={this.handleContentChange}></textarea>
-          </div>
-          <div>
-            <label className="form-group">Format:</label>
-            <select value={this.state.selectedFormat} onChange={this.handleFormatChange}>
-              <option value="pdf">PDF</option>
-              <option value="epub">EPUB</option>
-              <option VALUE="docx">WORD</option>
-            </select>
-          </div>
-          <button type="button" onClick={this.handleSave}>Save</button>
-        </form>
+  return (
+    <div className="about">
+    <NavigationBar />
+    <div className='about-section black-bg'>
+      <h1 className='about-title'>We're changing the way people think about Unizulu</h1>
+      <div className='about-content'>
+        <p>Welcome to Ebook Maker, your go-to platform for creating stunning ebooks and digital content with ease. We are passionate about empowering you to express your ideas, stories, and knowledge through professionally crafted digital publications.</p>
+        <p className='para2'>Ebook Maker is constantly evolving with new features and enhancements. Stay tuned for exciting updates and explore the possibilities of ebook creation.</p>
       </div>
-    );
-  }
-}
+
+    </div>
+    <div className='about-section blue-bg'>
+      <h1 className='about-title2'>Our Mission</h1>
+      <div className='about-content2'>
+      <p className='about-text'>Our mission is to provide a user-friendly and accessible tool for authors, educators, businesses, and creative individuals to bring their content to life in a digital format. We believe that everyone should have the opportunity to share their unique voice and message with the world.</p>
+      </div>
+    </div>
+    <div className='about-section white-bg'>
+      <h1 className='about-title'>Leadership Team</h1>
+      <ul className='team-list'>
+        <li>******</li>
+        <li>******</li>
+        <li>******</li>
+        <li>******</li>
+        <li>******</li>
+        <li>******</li>
+      </ul>
+    </div>
+    
+    <div className='footers'>
+      <Footer />
+    </div>
+  </div>
+
+    
+  );
+};
+
+
+
+
 
 export { About };

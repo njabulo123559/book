@@ -1,7 +1,31 @@
 import React, { useState } from "react";
 import {NavigationBar} from "./NavigationBar";
+import {Footer} from "./footer.jsx"
+import image2 from "../assets/istockphoto-828507464-612x612.jpg"
+import { useNavigate } from "react-router-dom";
+
 
 function HomePage() {
+  const navigate = useNavigate();
+  const inputField = document.getElementById('myInput');
+
+
+  const navigateToAbout = () => {
+    navigate("/about");
+  }
+
+  const newsLetter = () => {
+    if (inputField.value === ""){
+      alert("Please enter your email address");
+      // verify if the given eamil is a valid email addres format
+     
+
+      } else {
+        alert(inputField.value + ", Thank you for subscribing to our Newsletter!");
+  }
+}
+
+  
   return (
     <div>
         <NavigationBar />
@@ -13,10 +37,10 @@ function HomePage() {
             <p className="text2">Create stunning Ebooks with just a few clicks! Our user-friendly web application allows you to bring your ideas to life with ease. Choose from a wide range of templates, customize to your liking, and save your Ebook in any format. Get creative and start publishing your masterpiece today!</p>
           </div>
           <div className="ebook-image">
-            <img src="https://10web-site.ai/19/wp-content/uploads/sites/21/2023/10/barthelemy-de-mazenod-1Y5WpVfaAPQ-unsplash_gklUBh1K.webp" alt="Ebook" />
+            <img src="https://venngage-wordpress.s3.amazonaws.com/uploads/2019/06/eBook-BP-Header.jpg"  alt="Ebook" />
           </div>
           <div>
-            <button className="btn1" type="button">Learn More</button>
+            <button className="btn1" onClick={navigateToAbout} type="button">Learn More</button>
 
 
           </div>
@@ -61,26 +85,32 @@ function HomePage() {
             <p>Enter your email address to register to our newsletter subscription!</p>
         </div>
         <div>
-            <input className="search" type="email" placeholder="Email"></input>
+            <input className="search" id="myInput" type="email" placeholder="Email"></input>
         </div>
         <div>
-            <button class="btn1">Send</button>
+            <button onClick={newsLetter} class="btn1">Send</button>
         </div>
 
 
       </div>
-
-      /* Footer Section */
-    <div className="footer">
-        <p>&copy; 2023 Ebook Maker</p>
-        <p>University of Zululand</p>
-        <p>Private Bag X1041</p>
-        <p>Richards Bay 3900</p>
-        <p>Tel: +27 35 902 6950</p>
+      <div className="contact-section">
+      <div className="contact-left">
+        <h2>Get in contact with our team</h2>
+        <img src={image2} alt="Contact" />
+      </div>
+      <div className="contact-right">
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email Address" />
+        <input type="text" placeholder="Subject" />
+        <textarea placeholder="Message"></textarea>
+        <button>Submit</button>
+      </div>
     </div>
 
+    <Footer/>
 
-    </div>
+
+  </div>
 
   );
 }

@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import {registerLicense} from '@syncfusion/ej2-base';
+registerLicense("Ngo9BigBOggjHTQxAR8/V1NHaF5cXmVCf1JpRGNGfV5yd0VDal1ZTndeUiweQnxTdEZiWH9dcHFUTmFdVEZ+XA==")
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

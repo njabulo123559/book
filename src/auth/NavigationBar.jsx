@@ -23,9 +23,7 @@ function NavigationBar() {
         </NavLink>
       </div>
       <div className="navbar-right">
-        <Link to="/services" className="navbar-link">
-          Services
-        </Link>
+      
         <Link to="/about" className="navbar-link">
           About
         </Link>
@@ -34,9 +32,21 @@ function NavigationBar() {
         </Link>
 
         {auth.currentUser ? (
+          <div>
+          <Link to="/sync" className="navbar-link">
+          Create Ebook
+          </Link>
+          <Link to="/dashboard" className="navbar-link">
+          Dashboard
+          </Link>
           <button style={{color: 'white'}} onClick={handleLogout} className="navbar-button">
             Logout
           </button>
+          
+          
+          </div>
+
+          
         ) : (
           <>
             <Link to="/register" className="navbar-button">

@@ -2,117 +2,113 @@
 
 /* Styles for the Contact Page */
 .contact-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .text0{
-    color: #000000;
-    font-size: 40px;
-  }
-  
-  .left_section, p{
-    color: #3f3f3f;
-    font-size: 15px;
-    margin-left: auto;
-  
-  }
-  
-  .left-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1;
-
-  }
-  
-  .left-section h2 {
-    font-weight: bold;
-    margin-bottom: 10px;
-    display:inline-flexbox;
-  }
-  
-  .right-section {
-    flex: 1;
-    padding-left: 200px;
-  }
-  
-  .right-section form {
-    display: flex;
-    flex-direction: column;
-  }
-  .form-group input{
-    width:50%;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .form-group label {
-    display: block;
-    color: #000000;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-
-  /* Style the textarea */
-.form-group textarea {
-    width: 50%; /* Make the textarea span the full width of its container */
-    padding: 10px; /* Add padding to the textarea for spacing */
-    border: 1px solid #ccc; /* Add a border for visual separation */
-    border-radius: 4px; /* Add rounded corners to the textarea */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  margin-top: 130px;
+  margin-bottom: 20px;
 }
-  
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  textarea {
-    resize: vertical;
-    height: 150px; /* Adjust the height as needed */
-  }
 
+.text0 {
+  color: #000000;
+  font-size: 40px;
+  margin-left: 170px;
+}
 
-  
-  button {
-    background-color: #2270E2;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 25%;
-  }
-  
-  /* Styles for the Map Section */
-  .map-section {
-    height: 400px;
-    /* Add more styles for the map container as needed */
-  }
-  
+.left_section,
+p {
+  color: #3f3f3f;
+  font-size: 20px;
+  margin-left: auto;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.left-section h2 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: inline-flexbox;
+}
+
+.right-section {
+  flex: 1;
+  padding-left: 200px;
+}
+
+.right-section form {
+  display: flex;
+  flex-direction: column;
+}
+.form-group input {
+  width: 50%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group label {
+  display: block;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style the textarea */
+.form-group textarea {
+  width: 50%; /* Make the textarea span the full width of its container */
+  padding: 10px; /* Add padding to the textarea for spacing */
+  border: 1px solid #ccc; /* Add a border for visual separation */
+  border-radius: 4px; /* Add rounded corners to the textarea */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  height: 150px; /* Adjust the height as needed */
+}
+
+.btnSend {
+  background-color: #2270e2;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 25%;
+}
+
+/* Styles for the Map Section */
+.map-section {
+  height: 400px;
+  /* Add more styles for the map container as needed */
+}
+
 /* About.css */
 
 /* Styles for the About Page */
 
-.about-section{
+.about-section {
   background-color: rgb(25, 107, 179);
   display: flex;
- 
 }
-
 
 /* CreateEbook.css */
 
@@ -143,7 +139,6 @@ label {
 
 input[type="text"],
 textarea {
-  
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -158,20 +153,123 @@ select {
   font-size: 16px;
 }
 
-button {
-  margin-top: 30px;
-  width: 70px;
-  background-color: #007bff;
+
+
+
+/* About.css */
+.about-section {
+  background-color: #000;
   color: #fff;
-  padding: 10px 20px;
+  align-items: center;
+  display:inline-block;
+  
+  
+}
+
+
+
+/* Center the content horizontally */
+.about-content p {
+  margin: 0 auto;
+  max-width: 700px; /* Adjust the maximum width as needed */
+  padding: 20px;
+}
+
+.about-content2 p {
+  margin-left: 25%;
+  margin-right: 25%;
+  
+  
+}
+
+.about-content{
+  margin-top: 40px;
+  
+}
+
+
+.black-bg {
+  background-color: #ffffff;
+  color: #fff;
+  padding: 150px 0;
+  text-align: center;
+  padding-bottom: 130px;
+ 
+}
+/* Center the content horizontally */
+
+.blue-bg {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.white-bg {
+  background-color: #fff;
+  padding: 90px 0;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 45px;
+  font-weight: bold;
+  color: #353535;
+  text-align: center;
+  margin-left: 15vh;
+  margin-bottom: 20px;
+  max-width: 450px;
+  font-style: italic;
+  
+ 
+}
+
+.about-title2{
+  font-size: 40px;
+  color: #353535;
+  font-style: italic;
+}
+
+
+.team-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.team-list li {
   font-size: 16px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+  margin: 5px 0;
+  color: #000000;
 }
 
-button:hover {
-  background-color: #0056b3;
+.white-text {
+  color: #fff;
 }
 
-/* Add more styles as needed */
+.link-btn1{
+  margin-top: 20px;
+  background-color: #03c5ec;
+  text-decoration: none;
+  font-size: 17px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.link-btn1:hover{
+  background-color: #08c495;
+  transition: 2s;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    padding: 20px;
+  }
+}
+
+
+
+
+
+ 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {auth} from "../firebase";
 import { Link } from 'react-router-dom';
+import {NavigationBar} from "../auth/NavigationBar";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 
@@ -48,6 +49,7 @@ export const Register = (props) => {
 
     return (
         <div className="auth-form-container">
+            <NavigationBar/>
             <h2>Register</h2>
             {error && <div className="error-message">{error}</div>}
             <form className="register-form" onSubmit={handleSubmit}>
@@ -58,12 +60,12 @@ export const Register = (props) => {
                 <label htmlFor="password">Password</label>
                 <div className="password-input-container">
                     <input value={password} onChange={(e) => setPassword(e.target.value)} type={showPassword ? "text" : "password"} placeholder="********" id="password" name="password" />
-                    <button type="button" onClick={togglePasswordVisibility}>{showPassword ? "Hide" : "Show"}</button>
+                    
                 </div>
                 <label htmlFor="confirmPassword">Confirm Password</label>
                 <div className="password-input-container">
                     <input value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} type={showConfirmPassword ? "text" : "password"} placeholder="********" id="confirmPassword" name="confirmPassword" />
-                    <button type="button" onClick={toggleConfirmPasswordVisibility}>{showConfirmPassword ? "Hide" : "Show"}</button>
+                    
                 </div>
                 <button className="btn5" type="submit">Register</button>
             </form>
